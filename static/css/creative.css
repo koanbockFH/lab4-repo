@@ -1,0 +1,249 @@
+/* Basic Layout*/
+
+:root {
+    --light-bg: honeydew;
+    --dark-bg: #4b4c4d;
+    --first-letter-color: lightskyblue;
+    --body-font: 'Lato', sans-serif;
+    --header-font: 'Roboto', sans-serif;
+    --odd-row-color: rgb(204, 202, 202);
+    --even-row-color:  rgb(172, 172, 172);
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-bg);
+    font-family: var(--body-font);
+    font-size: 1.1em;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Headers */
+
+h1, h2, h3, h4, h5, strong {
+    font-family: var(--header-font);
+    margin: 0;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.2em;
+}
+
+h3 {
+    font-size: 1.7em;
+}
+
+h2::first-letter {
+    color: var(--first-letter-color);
+    text-transform: capitalize;
+    font-size: 1.5em;
+}
+
+/* alignments */
+
+.center {
+    text-align: center;
+}
+
+.right {
+    float: right;
+    text-align: right;
+}
+
+/* Profile */
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes profile {
+    0% {
+        border-width: 0em;
+        border-color: var(--light-bg);
+    }
+    50% {
+        border-width: 5em;
+        border-color: var(--first-letter-color);
+    }
+    100% {
+        border-width: 0em;
+        border-color: var(--light-bg);
+    }
+}
+
+.profile {
+    object-fit: cover;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: var(--light-bg);
+    height: 300px;
+    width: 300px;
+    animation-name: profile;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+/* Sections */
+
+.section {
+    padding: 3em;
+    justify-content: center;
+}
+
+.section.light, .section.light a {
+    background-color: var(--light-bg);
+    color: var(--dark-bg);
+}
+
+.section.dark, .section.dark a {
+    background-color: var(--dark-bg);
+    color: var(--light-bg);
+}
+
+.section>span, .section>strong, .section>i {
+    display: inline-block;
+}
+
+/* work experience Item */
+
+.work-item {
+    margin: 2em 0 0 0;
+}
+
+.work-item strong, .work-item i {
+    width: 45%;
+    display: inline-block;
+}
+
+.work-item>ul {
+    margin-top: 1em;
+}
+
+/* quote */
+
+blockquote {
+    border-left: 10px solid #ccc;
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-style: italic;
+    display: table;
+    width: auto;
+}
+
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote p {
+    display: inline;
+}
+
+/* table */
+
+table {
+    margin: 0 auto;
+    margin-top: 2em;
+    color: var(--dark-bg);
+}
+
+tr:nth-child(even),
+tr:nth-child(even) a {
+    background-color: var(--even-row-color) !important;
+}
+
+tr:nth-child(odd),
+tr:nth-child(odd) a {
+    background-color: var(--odd-row-color) !important;
+}
+
+table, td {
+    border: 2px solid var(--dark-bg);
+    border-collapse: collapse;
+}
+
+table strong {
+    display: block;
+}
+
+table td {
+    padding: 0.5em 1em;
+}
+
+table img {
+    max-width: 6em;
+    max-height: 6em;
+    margin: 1em;
+}
+
+/* Question */
+.question {
+    padding-top: 1em;
+}
+
+.question button {
+    float: right;
+    border: 0;    
+    font-family: var(--body-font);
+    font-size: 1.05em;
+    padding: 0.6em;
+    width: 5em;
+    border-radius: 0.25em;
+}
+
+.question h3 {
+    display: inline-block;
+}
+
+/* Toolbar */
+
+.toolbarButton {
+    position: absolute;
+    top: 1.5em;
+    right: 2em;
+    border: 0;
+    font-family: var(--body-font);
+    font-size: 1.15em;
+    padding: 0.5em;
+}
+
+/* gallery */
+
+#gallery img.thumbnail {
+    object-fit: cover;
+    border: grey solid 2px;
+    height: 100px;
+    width: 100px;
+    margin: 0.25em;
+}
+#gallery img.selected {
+    object-fit: cover;
+    border: lightskyblue solid 2px;
+    height: 100px;
+    width: 100px;
+}
+
+#presenter {
+    object-fit: cover;
+    height: 400px;
+    width: 400px;
+    margin: 1em;
+}
